@@ -4,6 +4,7 @@ const Bodies = Matter.Bodies;
 const Constraint = Matter.Constraint;
 
 var engine, world;
+var score = 0;
 
 var particles=[];
 var plinkos = [];
@@ -52,7 +53,7 @@ function draw() {
   background(0);  
   drawSprites();
 
-  if(frameCount%30 === 0){
+  if(frameCount%60 === 0){
     particles.push(new Particles(random(100,380),10,10))
   }
 
@@ -65,8 +66,9 @@ function draw() {
   }
   for(var i=0;i<particles.length;i++){
     particles[i].display();
+    particles[i].score();
   }
-  
-
+  textSize(12);
+text("score: "+score,400,100)
   
 }

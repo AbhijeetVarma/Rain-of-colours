@@ -11,6 +11,8 @@ class Plinkos {
             
       World.add(world, this.body);
     }
+    
+
     display(){
       var pos =this.body.position;
   
